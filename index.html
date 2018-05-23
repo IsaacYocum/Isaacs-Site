@@ -1,31 +1,17 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-  <meta http-equiv="Content-Style-Type" content="text/css">
   <title>Learn Enough JavaScript</title>
-  <meta name="Generator" content="Cocoa HTML Writer">
-  <meta name="CocoaVersion" content="1404.47">
+  <link rel="stylesheet" type="text/css" href="style.css">
   <script src="hello.js"></script>
-  <style type="text/css">
-    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Helvetica}
-    span.Apple-tab-span {white-space:pre}
-  </style>
-  <script>
-    alert("Hello, World!");
-    console.log("This page contains a friendly greeting.")
-
-    //Defining variables for console.log
-    let firstname = "Isaac"
-    let lastname = "Yocum"
-
-    //Prints to the console
-    console.log(firstname, lastname);
-  </script>
 </head>
 <body>
     <h1>Hello, World</h1>
     <p>This page includes an alert written in JavaScript</p>
     <p>Also, don't forget to check the console</p>
+    <div>
+      <input type="button" onclick="displayDate()" value="show date"/>
+      <p class="inline">Today is <span id="day"></span></p>
+    </div>
 </body>
 </html>
