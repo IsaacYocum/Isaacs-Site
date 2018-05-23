@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Learn Enough JavaScript</title>
+  <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="hello.js"></script>
 </head>
@@ -10,8 +11,8 @@
     <p>This page includes an alert written in JavaScript</p>
     <p>Also, don't forget to check the console</p>
     <div>
-      <input type="button" onclick="displayDate()" value="show date"/>
-      <p class="inline">Today is <span id="day"></span></p>
+      <input type="button" id="dateButton" onclick="displayDate()" value="show date"/>
+      <p class="inline"><span id="day"></span></p>
     </div>
 </body>
 </html>
