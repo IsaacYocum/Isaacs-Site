@@ -1,3 +1,6 @@
+//JavaScript that controls the exponent functionality in index.html
+//Author: Isaac Yocum
+
 //traditional notation
 //takes up more space
 function square(x) {
