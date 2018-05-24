@@ -19,7 +19,7 @@ function square(x) {
     var answer = Math.pow(parseFloat(x), 2);
     document.getElementById('squareOutput').value = answer;
   } else if (document.getElementById('squareInput').value === "" && document.getElementById('squareOutput').value === "") {
-    break;
+    clearSquare();
   } else {
     document.getElementById('squareOutput').value = "Numbers only";
   }
