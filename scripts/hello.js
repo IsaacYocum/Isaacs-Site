@@ -8,7 +8,7 @@ function displayAlert() {
   alert("We should come up with some kind of signal. Ok, how abou -- Warning! Warning! Warning!")
 }
 
-//Reduces amount needed to type for document.getElementById("")
+//Reduces the amount of typing needed for document.getElementById("")
 //Type getEleId("") instead
 function getEleId(string) {
   var getEle = document.getElementById(string);
@@ -30,7 +30,7 @@ function displayDate() {
   let month = months[now.getMonth()];
   let year = now.getFullYear();
 
-  if (getEleIdd("dateButton").value === "show date") {
+  if (getEleId("dateButton").value === "show date") {
     getEleId("dateButton").value = "hide date";
     getEleId("day").innerHTML = "Today is " + dayName + ", " + month + " " + dayNum + ", " + year;
   }
