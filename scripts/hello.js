@@ -5,7 +5,14 @@ console.log("Hello, world!", "how's it going?");
 
 //Displays an alert when activated
 function displayAlert() {
-  alert("Hel... Alert! Alert! Alert!")
+  alert("We should come up with some kind of signal. Ok, how abou -- Warning! Warning! Warning!")
+}
+
+//Reduces amount needed to type for document.getElementById("")
+//Type getEleId("") instead
+function getEleId(string) {
+  var getEle = document.getElementById(string);
+  return getEle;
 }
 
 //Controls the functionality for the show/hide date button on index.html
@@ -23,12 +30,12 @@ function displayDate() {
   let month = months[now.getMonth()];
   let year = now.getFullYear();
 
-  if (document.getElementById("dateButton").value === "show date") {
-    document.getElementById("dateButton").value = "hide date";
-    document.getElementById("day").innerHTML = "Today is " + dayName + ", " + month + " " + dayNum + ", " + year;
+  if (getEleIdd("dateButton").value === "show date") {
+    getEleId("dateButton").value = "hide date";
+    getEleId("day").innerHTML = "Today is " + dayName + ", " + month + " " + dayNum + ", " + year;
   }
   else {
-    document.getElementById("dateButton").value = "show date";
-    document.getElementById("day").innerHTML = "";
+    getEleId("dateButton").value = "show date";
+    getEleId("day").innerHTML = "";
   }
 }

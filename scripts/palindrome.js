@@ -7,27 +7,27 @@ var revString;
 
 //string parameter is reversed and sent to the palindromeOutput textbox on index.html
 function reverseString(string) {
-  var string = document.getElementById("palindromeInput").value;
+  var string = getEleId("palindromeInput").value;
   origString = string;
   var reverseString = string.split("").reverse().join("");
   revString = reverseString;
-  document.getElementById("palindromeOutput").value = reverseString;
+  getEleId("palindromeOutput").value = reverseString;
 }
 
 //Determines if this word is a palindrome
 function palindrome(string) {
   if (origString === revString && origString !== "") {
-    document.getElementById("palindromeChecker").innerHTML = "It is!";
+    getEleId("palindromeChecker").innerHTML = " it is a palindrome!";
   } else if (origString === "") {
-    document.getElementById("palindromeChecker").innerHTML = "Enter some text first!";
+    getEleId("palindromeChecker").innerHTML = " - Enter some text first!";
   } else {
-    document.getElementById("palindromeChecker").innerHTML = "Nope!";
+    getEleId("palindromeChecker").innerHTML = " it isn't a palindrome!";
   }
 }
 
 //Clears the palindromeInput and palindromeOutput textboxes on index.html
 function clearPalindrome() {
-  document.getElementById("palindromeInput").value = "";
-  document.getElementById("palindromeOutput").value = "";
-  document.getElementById("palindromeChecker").innerHTML = "";
+  getEleId("palindromeInput").value = "";
+  getEleId("palindromeOutput").value = "";
+  getEleId("palindromeChecker").innerHTML = "";
 }

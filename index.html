@@ -8,7 +8,7 @@
   <script src="scripts/square.js"></script>
   <script src="scripts/palindrome.js"></script>
 </head>
-<body onload="clearSquare()">
+<body onload="clearSquare(), clearPalindrome()">
     <h1>Hello, World</h1>
     <p class="inline">This page includes an alert written in JavaScript
                       (taken out for speed). Click this button instead!
@@ -25,9 +25,9 @@
     <div>
       <h3>Square a number</h3>
       <p>The square of
-        <input type="text" id="squareInput" placeholder="Number"/>
+        <input type="text" id="squareInput" placeholder="this number"/>
         =
-        <input type="text" id="squareOutput" placeholder="Number squared" readonly/>
+        <input type="text" id="squareOutput" placeholder="that number squared" readonly/>
       </p>
       <input type="button" onclick="square()" value="Calculate"/>
       <input type="button" onclick="clearSquare()" value="Clear"/>
@@ -36,13 +36,14 @@
     <div>
       <h3>A simple palindrome</h3>
       <p>
-        <input type="text" id="palindromeInput" placeholder="This word"/>
-         reversed is
-        <input type="text" id="palindromeOutput" placeholder="word reversed"/>
+        The reverse of
+        <input type="text" id="palindromeInput" placeholder="this word"/>
+        is
+        <input type="text" id="palindromeOutput" placeholder="that word reversed" readonly/>
+        and <span id=palindromeChecker></span>
       </p>
-      <p>Is it a palindrome? <span id="palindromeChecker"></span></p>
-      <input type="button" onclick="reverseString(), palindrome()" value="go"/>
-      <input type="submit" onclick="clearPalindrome()" value="clear"/>
+      <input type="button" onclick="reverseString(), palindrome()" value="Go"/>
+      <input type="submit" onclick="clearPalindrome()" value="Clear"/>
     </div>
 </body>
 </html>
