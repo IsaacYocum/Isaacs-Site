@@ -4,29 +4,45 @@
   <title>Learn Enough JavaScript</title>
   <meta charset="UTF-8">
   <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="hello.js"></script>
-  <script src="square.js"></script>
+  <script src="scripts/hello.js"></script>
+  <script src="scripts/square.js"></script>
+  <script src="scripts/palindrome.js"></script>
 </head>
-<body>
+<body onload="clearSquare()">
     <h1>Hello, World</h1>
-    <p class="inline">This page includes an alert written in JavaScript (taken out for speed). Click this button instead!
+    <p class="inline">This page includes an alert written in JavaScript
+                      (taken out for speed). Click this button instead!
        <input type="button" id="displayAlert" onclick="displayAlert()" value="show alert"/>
     </p>
     <p>Also, don't forget to check the console</p>
   <hr>
-  </br>
     <div>
+      <h3>Show the date</h3>
       <input type="button" id="dateButton" onclick="displayDate()" value="show date"/>
       <p class="inline"><span id="day"></span></p>
     </div>
   <hr>
     <div>
-      <p>The square of <input type="text" id="squareInput" placeholder="Number"/> =
+      <h3>Square a number</h3>
+      <p>The square of
+        <input type="text" id="squareInput" placeholder="Number"/>
+        =
         <input type="text" id="squareOutput" placeholder="Number squared" readonly/>
       </p>
-      <input type="button" id="squareButton" onclick="square()" value="Calculate"/>
+      <input type="button" onclick="square()" value="Calculate"/>
       <input type="button" onclick="clearSquare()" value="Clear"/>
     </div>
   <hr>
+    <div>
+      <h3>A simple palindrome</h3>
+      <p>
+        <input type="text" id="palindromeInput" placeholder="This word"/>
+         reversed is
+        <input type="text" id="palindromeOutput" placeholder="word reversed"/>
+      </p>
+      <p>Is it a palindrome? <span id="palindromeChecker"></span></p>
+      <input type="button" onclick="reverseString(), palindrome()" value="go"/>
+      <input type="submit" onclick="clearPalindrome()" value="clear"/>
+    </div>
 </body>
 </html>

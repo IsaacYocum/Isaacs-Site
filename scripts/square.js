@@ -17,7 +17,7 @@ console.log(squared(4));
 function square(x) {
   var x = document.getElementById('squareInput').value;
 
-  //Checks if x can be parsed into a float. If true -- calculate, if false -- display hint, if empty -- do nothing
+  //Checks if x can be parsed into a float. If true -- calculate, if false -- display hint, if textboxes are empty -- do nothing
   if (parseFloat(x)) {
     var answer = Math.pow(parseFloat(x), 2);
     document.getElementById('squareOutput').value = answer;
