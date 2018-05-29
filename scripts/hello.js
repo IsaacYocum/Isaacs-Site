@@ -39,3 +39,7 @@ function displayDate() {
     getEleId("day").innerHTML = "";
   }
 }
+
+function clearEverything() {
+  getEleId(str.match(/put/g)).value = "";
+}

@@ -16,12 +16,12 @@ function reverseString(string) {
 
 //Determines if this word is a palindrome
 function palindrome(string) {
-  if (origString === revString && origString !== "") {
-    getEleId("palindromeChecker").innerHTML = " it is a palindrome!";
+  if (origString.toLowerCase() === revString.toLowerCase() && origString !== "") {
+    getEleId("palindromeChecker").innerHTML = " and it is a palindrome!";
   } else if (origString === "") {
     getEleId("palindromeChecker").innerHTML = " - Enter some text first!";
   } else {
-    getEleId("palindromeChecker").innerHTML = " it isn't a palindrome!";
+    getEleId("palindromeChecker").innerHTML = " and it isn't a palindrome!";
   }
 }
 

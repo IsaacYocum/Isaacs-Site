@@ -1,4 +1,4 @@
-let a = [8, 17, 42, 99];
+let a = [8, 17, 42, 99, 3, 100, 50];
 
 console.log(a.sort() + " -- Before function");
 
@@ -13,3 +13,9 @@ function numberCompare(a, b) {
 }
 
 console.log(a.sort(numberCompare) + " -- After function");
+
+a.sort(function numSort(a, b) {
+  return a - b;
+});
+
+console.log(a.sort(numSort));
