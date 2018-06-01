@@ -16,41 +16,66 @@
     </br>
     <p>I thought it would be cool to make a calculator from scratch - so I did!</p>
     <p>This is a work in progress</p>
-      <div>
-        <input type="text" id="calcOutput" readonly></input>
-      </div>
     </br>
-      <div>
-        <input type="button" value="7" onclick="GetNum(7)"></input>
-        <input type="button" value="8" onclick="GetNum(8)"></input>
-        <input type="button" value="9" onclick="GetNum(9)"></input>
-        <input type="button" value="Clr" onclick="Clear()"></input>
-      </div>
-      <div>
-        <input type="button" value="4" onclick="GetNum(4)"></input>
-        <input type="button" value="5" onclick="GetNum(5)"></input>
-        <input type="button" value="6" onclick="GetNum(6)"></input>
-        <input type="button" value="/" onclick="GetOperator('/')"></input>
-        <input type="button" value="+" onclick="GetOperator('+')"></input>
-      </div>
-      <div>
-        <input type="button" value="1" onclick="GetNum(1)"></input>
-        <input type="button" value="2" onclick="GetNum(2)"></input>
-        <input type="button" value="3" onclick="GetNum(3)"></input>
-        <input type="button" value="*" onclick="GetOperator('*')"></input>
-        <input type="button" value="-" onclick="GetOperator('-')"></input>
-      </div>
-      <div>
-        <input type="button" value="." onclick="GetNum('.')"></input>
-        <input type="button" value="0" onclick="GetNum('0')"></input>
-        <input type="button" value="=" onclick="Calculate()"></input>
-      </div>
+    <div class="calcWrapper">
+      <div class="row">
+        <div class="row">
+          <input type="text" id="calcOutput" readonly></input>
+        </div>
+      </br>
+        <div class="column columnLeft">
+          <div class="row">
+            <input type="button" class="calcButton" value="(-)"></input>
+            <input type="button" class="calcButton" value="^"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="7" onclick="GetNum(7)"></input>
+            <input type="button" class="calcButton" value="8" onclick="GetNum(8)"></input>
+            <input type="button" class="calcButton" value="9" onclick="GetNum(9)"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="4" onclick="GetNum(4)"></input>
+            <input type="button" class="calcButton" value="5" onclick="GetNum(5)"></input>
+            <input type="button" class="calcButton" value="6" onclick="GetNum(6)"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="1" onclick="GetNum(1)"></input>
+            <input type="button" class="calcButton" value="2" onclick="GetNum(2)"></input>
+            <input type="button" class="calcButton" value="3" onclick="GetNum(3)"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="." onclick="GetNum('.')"></input>
+            <input type="button" class="calcButton" value="0" onclick="GetNum('0')"></input>
+            <input type="button" class="calcButton" value="=" onclick="Calculate()"></input>
+          </div>
+        </div>
+        <div class="column columnRight">
+          <div class="row">
+            <input type="button" class="calcButton" value="Clr" onclick="Clear()"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="&times" onclick="GetOperator('*')"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="&divide" onclick="GetOperator('/')"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="+" onclick="GetOperator('+')"></input>
+          </div>
+          <div class="row">
+            <input type="button" class="calcButton" value="-" onclick="GetOperator('-')"></input>
+          </div>
+        </div>
     </br></br>
     </div>
+  </div>
+</div>
     <h3>To do...</h3>
     <ol>
-      <li>Add exponents</li>
-      <li>Create a more attractive layout</li>
+      <li>Implement exponents</li>
+      <li>Implement parentheses</li>
+      <li>Fix zero divided by zero error</li>
+      <li>Implement negative sign</li>
     </ol>
   </body>
 </html>
