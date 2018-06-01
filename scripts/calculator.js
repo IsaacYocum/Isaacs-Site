@@ -43,21 +43,30 @@ function GetOperator(op) {
   }
 }
 
+function Negative() {
+  if (binary === false) {
+    firstNum = "-" + firstNum;
+    document.getElementById('calcOutput').value = firstNum;
+  } else {
+    secondNum = "-" + secondNum;
+    document.getElementById('calcOutput').value = secondNum;
+  }
+}
+
 function Calculate() {
   var answer;
   if (operator === "*") {
     answer = firstNum * secondNum;
-    document.getElementById('calcOutput').value = answer;
   } else if (operator === "/") {
     answer = firstNum / secondNum;
-    document.getElementById('calcOutput').value = answer;
   } else if (operator === "+") {
     answer = +firstNum + +secondNum;
-    document.getElementById('calcOutput').value = answer;
   } else if (operator === "-") {
     answer = firstNum - secondNum;
-    document.getElementById('calcOutput').value = answer;
+  } else if (operator === "^") {
+    answer = Math.pow(firstNum, secondNum);
   }
+  document.getElementById('calcOutput').value = answer;
 
   firstNum = answer;
   secondNum = "";
