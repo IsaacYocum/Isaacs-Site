@@ -1,12 +1,6 @@
 //All the functionality of a Calculator
 //Author: Isaac Yocum
 
-//Plan
-//Step 1: Get first number
-//Step 2: Get operator
-//Step 3: Get second number
-//Step 4: Show result, allow result to continue if wanted
-
 //Global variables to keep track of the Numbers
 var firstNum = "";
 var secondNum = "";

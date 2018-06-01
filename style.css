@@ -2,11 +2,6 @@
   display: inline;
 }
 
-.calculator {
-  border-style: solid;
-  text-align: center;
-}
-
 .calcButton {
   height: 30px;
   width: 50px;
@@ -38,9 +33,14 @@ input {
 }
 
 .calcWrapper {
-  width: auto;
   text-align: center;
-      margin: 0 auto;
+}
+
+.calculator {
+  width: 250px;
+  margin: 0 auto;
+  border-style: solid;
+  background-color: #dddddd;
 }
 
 .row:after {
