@@ -25,15 +25,20 @@ function GetNum(num) {
 
 function GetOperator(op) {
   operator = op;
-  //If firstNum
-  if (binary === false) {
-    operator = op;
-    console.log(operator)
-    binary = true;
-  //If secondNum
+
+  if (firstNum === "") {
+    alert("Enter a number first")
   } else {
-    alert("You have already entered an operator. Press =")
-    binary = false;
+    //If firstNum
+    if (binary === false) {
+      operator = op;
+      console.log(operator)
+      binary = true;
+    //If secondNum
+    } else {
+      alert("You have already entered an operator. Press =")
+      binary = false;
+    }
   }
 }
 
