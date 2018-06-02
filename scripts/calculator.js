@@ -9,11 +9,12 @@ var answer;
 
 //False assigns firstNum
 //True assigns secondNum
-var binary = false;
+var whichNum = false;
 
+//Gets the appropriate numbers from buttons pressed
 function GetNum(num) {
   var numPlaceholder = num.toString();
-  if (binary === false) {
+  if (whichNum === false) {
     if (answer !== undefined) {
       firstNum = numPlaceholder;
       console.log("firstNum is " + firstNum)
@@ -30,26 +31,27 @@ function GetNum(num) {
   }
 }
 
+//Gets the mathematical operator and allows the second number to be entered
 function GetOperator(op) {
   operator = op;
   if (firstNum === "") {
     alert("Enter a number first")
   } else {
     //If firstNum
-    if (binary === false) {
-      operator = op;
+    if (whichNum === false) {
       console.log(operator)
-      binary = true;
-    //If secondNum
+      whichNum = true;
+      //If secondNum
     } else {
-      alert("You have already entered an operator. Press =")
-      binary = false;
+      Calculate();
+      whichNum = true;
     }
   }
 }
 
+//Makes the appropriate number negative
 function Negative() {
-  if (binary === false) {
+  if (whichNum === false) {
     firstNum = "-" + firstNum;
     document.getElementById('calcOutput').value = firstNum;
   } else {
@@ -58,6 +60,7 @@ function Negative() {
   }
 }
 
+//Calculates result given two numbers and an operator
 function Calculate() {
   if (operator === "*") {
     answer = firstNum * secondNum;
@@ -74,14 +77,14 @@ function Calculate() {
   console.log("firstNum " + firstNum + " " + operator + " secondNum " + secondNum +  " = answer " + answer);
   firstNum = answer;
   secondNum = "";
-  binary = false;
+  whichNum = false;
 }
 
-//Resets the calculator
+//Resets the calculator and all variables to their default states
 function Clear() {
   document.getElementById('calcOutput').value = "";
   firstNum = "";
   secondNum = "";
   answer = undefined;
-  binary = false;
+  whichNum = false;
 }
