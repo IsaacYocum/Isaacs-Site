@@ -19,6 +19,7 @@ function GetNum(num) {
       firstNum = numPlaceholder;
       console.log("firstNum is " + firstNum)
       document.getElementById('calcOutput').value = firstNum;
+      answer = undefined;
     } else {
       firstNum += numPlaceholder;
       console.log("firstNum is " + firstNum)
@@ -33,10 +34,7 @@ function GetNum(num) {
 
 //Gets the mathematical operator and allows the second number to be entered
 function GetOperator(op) {
-  operator = op;
-  if (firstNum === "") {
-    alert("Enter a number first")
-  } else {
+  if (firstNum !== "") {
     //If firstNum
     if (whichNum === false) {
       console.log(operator)
@@ -46,17 +44,40 @@ function GetOperator(op) {
       Calculate();
       whichNum = true;
     }
+    operator = op;
+  }
+}
+
+function Decimal() {
+  if (!whichNum) {
+    if (!firstNum.includes('.')) {
+      firstNum += '.';
+      document.getElementById('calcOutput').value = firstNum;
+    }
+  } if (!secondNum.includes('')) {
+    secondNum += '.';
+    document.getElementById('calcOutput').value = secondNum;
   }
 }
 
 //Makes the appropriate number negative
 function Negative() {
-  if (whichNum === false) {
-    firstNum = "-" + firstNum;
-    document.getElementById('calcOutput').value = firstNum;
+  if (!whichNum) {
+    if (!firstNum.includes('-')) {
+      firstNum = "-" + firstNum;
+      document.getElementById('calcOutput').value = firstNum;
+    } else {
+      firstNum = firstNum.replace('-', '');
+      document.getElementById('calcOutput').value = firstNum;
+    }
   } else {
-    secondNum = "-" + secondNum;
-    document.getElementById('calcOutput').value = secondNum;
+    if (!secondNum.includes('-')) {
+      secondNum = "-" + secondNum;
+      document.getElementById('calcOutput').value = secondNum;
+    } else {
+      secondNum = secondNum.replace('-', '');
+      document.getElementById('calcOutput').value = secondNum;
+    }
   }
 }
 
