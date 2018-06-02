@@ -2,9 +2,9 @@
 //Author: Isaac Yocum
 
 //Global variables to keep track of the Numbers
-var firstNum = "";
-var secondNum = "";
-var operator = "";
+var firstNum = '';
+var secondNum = '';
+var operator = '';
 var answer;
 
 //False assigns firstNum
@@ -17,24 +17,24 @@ function GetNum(num) {
   if (whichNum === false) {
     if (answer !== undefined) {
       firstNum = numPlaceholder;
-      console.log("firstNum is " + firstNum)
+      console.log('firstNum is ' + firstNum)
       document.getElementById('calcOutput').value = firstNum;
       answer = undefined;
     } else {
       firstNum += numPlaceholder;
-      console.log("firstNum is " + firstNum)
+      console.log('firstNum is ' + firstNum)
       document.getElementById('calcOutput').value = firstNum;
     }
   } else {
     secondNum += numPlaceholder;
-    console.log("secondNum is " + secondNum)
+    console.log('secondNum is ' + secondNum)
     document.getElementById('calcOutput').value = secondNum;
   }
 }
 
 //Gets the mathematical operator and allows the second number to be entered
 function GetOperator(op) {
-  if (firstNum !== "") {
+  if (firstNum !== '') {
     //If firstNum
     if (whichNum === false) {
       console.log(operator)
@@ -48,13 +48,14 @@ function GetOperator(op) {
   }
 }
 
+//Concatenates a decimal
 function Decimal() {
   if (!whichNum) {
     if (!firstNum.includes('.')) {
       firstNum += '.';
       document.getElementById('calcOutput').value = firstNum;
     }
-  } if (!secondNum.includes('')) {
+  } if (!secondNum.includes('.')) {
     secondNum += '.';
     document.getElementById('calcOutput').value = secondNum;
   }
@@ -64,7 +65,7 @@ function Decimal() {
 function Negative() {
   if (!whichNum) {
     if (!firstNum.includes('-')) {
-      firstNum = "-" + firstNum;
+      firstNum = '-' + firstNum;
       document.getElementById('calcOutput').value = firstNum;
     } else {
       firstNum = firstNum.replace('-', '');
@@ -72,7 +73,7 @@ function Negative() {
     }
   } else {
     if (!secondNum.includes('-')) {
-      secondNum = "-" + secondNum;
+      secondNum = '-' + secondNum;
       document.getElementById('calcOutput').value = secondNum;
     } else {
       secondNum = secondNum.replace('-', '');
@@ -83,29 +84,29 @@ function Negative() {
 
 //Calculates result given two numbers and an operator
 function Calculate() {
-  if (operator === "*") {
+  if (operator === '*') {
     answer = firstNum * secondNum;
-  } else if (operator === "/") {
+  } else if (operator === '/') {
     answer = firstNum / secondNum;
-  } else if (operator === "+") {
+  } else if (operator === '+') {
     answer = +firstNum + +secondNum;
-  } else if (operator === "-") {
+  } else if (operator === '-') {
     answer = firstNum - secondNum;
-  } else if (operator === "^") {
+  } else if (operator === '^') {
     answer = Math.pow(firstNum, secondNum);
   }
   document.getElementById('calcOutput').value = answer;
-  console.log("firstNum " + firstNum + " " + operator + " secondNum " + secondNum +  " = answer " + answer);
+  console.log('firstNum ' + firstNum + ' ' + operator + ' secondNum ' + secondNum +  ' = answer ' + answer);
   firstNum = answer;
-  secondNum = "";
+  secondNum = '';
   whichNum = false;
 }
 
 //Resets the calculator and all variables to their default states
 function Clear() {
-  document.getElementById('calcOutput').value = "";
-  firstNum = "";
-  secondNum = "";
+  document.getElementById('calcOutput').value = '';
+  firstNum = '';
+  secondNum = '';
   answer = undefined;
   whichNum = false;
 }
