@@ -16,6 +16,7 @@ function GetNum(num) {
   if (binary === false) {
     if (answer !== undefined) {
       firstNum = numPlaceholder;
+      console.log("firstNum is " + firstNum)
       document.getElementById('calcOutput').value = firstNum;
     } else {
       firstNum += numPlaceholder;
@@ -70,7 +71,7 @@ function Calculate() {
     answer = Math.pow(firstNum, secondNum);
   }
   document.getElementById('calcOutput').value = answer;
-
+  console.log("firstNum " + firstNum + " " + operator + " secondNum " + secondNum +  " = answer " + answer);
   firstNum = answer;
   secondNum = "";
   binary = false;
