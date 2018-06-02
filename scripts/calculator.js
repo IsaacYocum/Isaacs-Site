@@ -5,6 +5,7 @@
 var firstNum = "";
 var secondNum = "";
 var operator = "";
+var answer;
 
 //False assigns firstNum
 //True assigns secondNum
@@ -13,9 +14,14 @@ var binary = false;
 function GetNum(num) {
   var numPlaceholder = num.toString();
   if (binary === false) {
-    firstNum += numPlaceholder;
-    console.log("firstNum is " + firstNum)
-    document.getElementById('calcOutput').value = firstNum;
+    if (answer !== undefined) {
+      firstNum = numPlaceholder;
+      document.getElementById('calcOutput').value = firstNum;
+    } else {
+      firstNum += numPlaceholder;
+      console.log("firstNum is " + firstNum)
+      document.getElementById('calcOutput').value = firstNum;
+    }
   } else {
     secondNum += numPlaceholder;
     console.log("secondNum is " + secondNum)
@@ -25,7 +31,6 @@ function GetNum(num) {
 
 function GetOperator(op) {
   operator = op;
-
   if (firstNum === "") {
     alert("Enter a number first")
   } else {
@@ -53,7 +58,6 @@ function Negative() {
 }
 
 function Calculate() {
-  var answer;
   if (operator === "*") {
     answer = firstNum * secondNum;
   } else if (operator === "/") {
@@ -77,5 +81,6 @@ function Clear() {
   document.getElementById('calcOutput').value = "";
   firstNum = "";
   secondNum = "";
+  answer = undefined;
   binary = false;
 }
