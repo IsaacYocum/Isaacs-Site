@@ -83,6 +83,7 @@ function Negative() {
 }
 
 //Calculates result given two numbers and an operator
+//Uses implicite cohersion
 function Calculate() {
   if (operator === '*') {
     answer = firstNum * secondNum;
