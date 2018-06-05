@@ -4,6 +4,7 @@
   <title>Days Since</title>
   <meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts/time.js"></script>
 </head>
 <body>
   <div>
@@ -23,18 +24,18 @@
   is
 </center>
 </br>
-<center><input type="submit" id="dateCalc" value="Calculate"></center>
+<center><input type="submit" id="dateCalc" value="Calculate" onclick="GetDates()"></center>
 </br></br>
 <div class="calcWrapper">
 <div class="row">
   <div class="column columnLeft">
-    <p>a</p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
-    <p></p>
+    <p id="Days"></p>
+    <p id="Months"></p>
+    <p id="Years"></p>
+    <p id="Hours"></p>
+    <p id="Minutes"></p>
+    <p id="Seconds"></p>
+    <p id="Milliseconds"></p>
   </div>
   <div class="column columnRight">
     <p>Days</p>
@@ -43,7 +44,7 @@
     <p>Hours</p>
     <p>Minutes</p>
     <p>Seconds</p>
-    <p>Miliseconds</p>
+    <p>Milliseconds</p>
   </div>
 </div>
 </div>
