@@ -1,52 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Days Since</title>
-  <meta charset="utf-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Days Since</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts/time.js"></script>
 </head>
-<body>
-  <div>
+<body onload="ConvertDates('today')">
+<div>
     <button onclick="location.href='index.html'" type="button">Home</button>
     <button onclick="location.href='calculator.html'" type="button">Calculator</button>
     <button onclick="location.href='time.html'" type="button">Time Difference</button>
-  </div>
-  <hr>
-  <center><p>Here you can calculate the difference between two dates</p></center>
+</div>
+<hr>
+<center><h3>Here you can calculate the difference between two dates</h3></center>
 </br>
-</br>
-<center>
-  The difference between
-  <input type="date" id="firstDate">
-  and
-  <input type="date" id="secondDate">
-  is
-</center>
-</br>
+<div class="dateArea">
+    <p>The time difference between </br></p>
+    <input type="date" id="firstDate"></br>
+    <p>and</br></p>
+    <input type="date" id="secondDate"></br>
+    <p>is</br></p>
+</div>
 <center><input type="submit" id="dateCalc" value="Calculate" onclick="GetDates()"></center>
 </br></br>
+<center><h3>Raw separate values</h3></center>
 <div class="calcWrapper">
-<div class="row">
-  <div class="column columnLeft">
-    <p id="Days"></p>
-    <p id="Months"></p>
-    <p id="Years"></p>
-    <p id="Hours"></p>
-    <p id="Minutes"></p>
-    <p id="Seconds"></p>
-    <p id="Milliseconds"></p>
-  </div>
-  <div class="column columnRight">
-    <p>Days</p>
-    <p>Months</p>
-    <p>Years</p>
-    <p>Hours</p>
-    <p>Minutes</p>
-    <p>Seconds</p>
-    <p>Milliseconds</p>
-  </div>
+    <div class="row">
+        <div class="column columnLeft">
+            <p id="Years"></p>
+            <p id="Months"></p>
+            <p id="Days"></p>
+            <p id="Hours"></p>
+            <p id="Minutes"></p>
+            <p id="Seconds"></p>
+            <p id="Milliseconds"></p>
+        </div>
+        <div class="column columnRight">
+            <p>Years</p>
+            <p>Months</p>
+            <p>Days</p>
+            <p>Hours</p>
+            <p>Minutes</p>
+            <p>Seconds</p>
+            <p>Milliseconds</p>
+        </div>
+    </div>
 </div>
-</div>
+<center><p id="readableAnswer"></p></center>
 </body>
 </html>
