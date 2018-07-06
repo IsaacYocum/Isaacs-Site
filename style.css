@@ -1,3 +1,17 @@
+html,
+body {
+    background-color: #7ACEF3;
+    font-size: 1.1em;
+    margin:0;
+    height:100%;
+}
+
+.body-content {
+    margin-left: 20vw;
+    margin-right: 20vw;
+    padding-bottom: 60px;
+}
+
 .inline {
   display: inline;
 }
@@ -52,4 +66,28 @@ input {
 
 .dateArea {
     text-align: center;
+}
+
+.navbar {
+    margin-left: 0;
+    margin-right: 0;
+    background-color: #FF8A00;
+    font-weight: bolder;
+}
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+    height:60px;   /* Height of the footer */
+    background-color: #FF8A00;
+}
+
+#container {
+    min-height:100%;
+    position:relative;
+}
+
+.tableSpacer {
+    width: 50px;
 }

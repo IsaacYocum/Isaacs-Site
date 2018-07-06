@@ -1,108 +1,126 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>JavaScript Playground - Home</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" href="style.css">
-  <script src="scripts/hello.js"></script>
-  <script src="scripts/math.js"></script>
-  <script src="scripts/palindrome.js"></script>
+    <title>Isaac's Site - Home</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="scripts/hello.js"></script>
+    <script src="scripts/math.js"></script>
+    <script src="scripts/palindrome.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body onload="clearEverything(), clearPalindrome()">
-  <div>
-    <button onclick="location.href='index.html'" type="button">Home</button>
-    <button onclick="location.href='calculator.html'" type="button">Calculator</button>
-    <button onclick="location.href='time.html'" type="button">Time Difference</button>
-  </div>
-  <hr>
-    <h1><center>Hello, World</center></h1>
-    <center>It may not look pretty, but that's not the point. I'm practicing my JavaScript here :)</center>
-  </br></br>
-    <p class="inline">This page includes an alert written in JavaScript
-                      (taken out for speed). Click this button instead!
-       <input type="button" id="displayAlert" onclick="displayAlert()" value="show alert"/>
-    </p>
-    <p>Also, don't forget to check the console </p>
-  <hr>
-    <div>
-      <h3>Show the date</h3>
-      <input type="button" id="dateButton" onclick="displayDate()" value="show date"/>
-      <p class="inline"><span id="day"></span></p>
+<div id="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="index.html">Isaac's Site</a>
+            <a class="nav-link" href="calculator.html">Calculator</a>
+            <a class="nav-link" href="time.html">Time Difference</a>
+        </div>
+    </nav>
+    <div class="body-content">
+        <br>
+        <h1>
+            <center>Hello, World</center>
+        </h1>
+        <center>It may not look pretty, but that's not the point. I'm practicing my JavaScript here :)</center>
+        </br></br>
+        <p class="inline">This page includes an alert written in JavaScript
+            (taken out for speed). Click this button instead!
+            <input type="button" id="displayAlert" onclick="displayAlert()" value="show alert"/>
+        </p>
+        <p>Also, don't forget to check the console </p>
+        <hr>
+        <div>
+            <h3>Show the date</h3>
+            <input type="button" id="dateButton" onclick="displayDate()" value="show date"/>
+            <p class="inline"><span id="day"></span></p>
+        </div>
+        <hr>
+        <div>
+            <h3>Do some math! -- I made a calculator to accomplish these tasks better. Check it out <a
+                    href="calculator.html" !>here</a>
+            </h3>
+            <p>Add
+                <input type="text" id="addInputX" placeholder="this number"/>
+                +
+                <input type="text" id="addInputY" placeholder="this number"/>
+                =
+                <input type="text" id="addOutput" readonly/>
+            </p>
+            <input type="button" onclick="addition()" value="Calculate"/>
+            <input type="button" onclick="clearAdd()" value="Clear"/>
+            <span id=""></span>
+        </div>
+        <div>
+            <p>Subtract
+                <input type="text" id="subInputX" placeholder="this number"/>
+                -
+                <input type="text" id="subInputY" placeholder="this number"/>
+                =
+                <input type="text" id="subOutput" readonly/>
+            </p>
+            <input type="button" onclick="subtraction()" value="Calculate"/>
+            <input type="button" onclick="clearSub()" value="Clear"/>
+            <span id=""></span>
+        </div>
+        <div>
+            <p>Multiply
+                <input type="text" id="mulInputX" placeholder="this number"/>
+                x
+                <input type="text" id="mulInputY" placeholder="this number"/>
+                =
+                <input type="text" id="mulOutput" readonly/>
+            </p>
+            <input type="button" onclick="multiplication()" value="Calculate"/>
+            <input type="button" onclick="clearMul()" value="Clear"/>
+            <span id=""></span>
+        </div>
+        <div>
+            <p>Divide
+                <input type="text" id="divInputX" placeholder="this number"/>
+                /
+                <input type="text" id="divInputY" placeholder="this number"/>
+                =
+                <input type="text" id="divOutput" readonly/>
+            </p>
+            <input type="button" onclick="division()" value="Calculate"/>
+            <input type="button" onclick="clearDiv()" value="Clear"/>
+            <span id=""></span>
+        </div>
+        <div>
+            <p>Exponents
+                <input type="text" id="expInputX" placeholder="this number"/>
+                to the power of
+                <input type="text" id="expInputY" placeholder="this number"/>
+                =
+                <input type="text" id="expOutput" readonly/>
+            </p>
+            <input type="button" onclick="exponent()" value="Calculate"/>
+            <input type="button" onclick="clearExp()" value="Clear"/>
+            <span id=""></span>
+        </div>
+        <hr>
+        <div>
+            <h3>A simple palindrome</h3>
+            <p>
+                <input type="text" id="palindromeInput" placeholder="This word"/>
+                reversed is
+                <input type="text" id="palindromeOutput" placeholder="this" readonly/>
+                <span id=palindromeChecker></span>
+            </p>
+            <input type="button" onclick="reverseString(), palindrome()" value="Go"/>
+            <input type="submit" onclick="clearPalindrome()" value="Clear"/>
+        </div>
     </div>
-  <hr>
-    <div>
-      <h3>Do some math! -- I made a calculator to accomplish these tasks better. Check it out <a href="calculator.html"!>here</a></h3>
-      <p>Add
-        <input type="text" id="addInputX" placeholder="this number"/>
-        +
-        <input type="text" id="addInputY" placeholder="this number"/>
-        =
-        <input type="text" id="addOutput" readonly/>
-      </p>
-      <input type="button" onclick="addition()" value="Calculate"/>
-      <input type="button" onclick="clearAdd()" value="Clear"/>
-      <span id=""></span>
+    <div class="footer">
+
     </div>
-    <div>
-      <p>Subtract
-        <input type="text" id="subInputX" placeholder="this number"/>
-        -
-        <input type="text" id="subInputY" placeholder="this number"/>
-        =
-        <input type="text" id="subOutput" readonly/>
-      </p>
-      <input type="button" onclick="subtraction()" value="Calculate"/>
-      <input type="button" onclick="clearSub()" value="Clear"/>
-      <span id=""></span>
-    </div>
-    <div>
-      <p>Multiply
-        <input type="text" id="mulInputX" placeholder="this number"/>
-        x
-        <input type="text" id="mulInputY" placeholder="this number"/>
-        =
-        <input type="text" id="mulOutput" readonly/>
-      </p>
-      <input type="button" onclick="multiplication()" value="Calculate"/>
-      <input type="button" onclick="clearMul()" value="Clear"/>
-      <span id=""></span>
-    </div>
-    <div>
-      <p>Divide
-        <input type="text" id="divInputX" placeholder="this number"/>
-        /
-        <input type="text" id="divInputY" placeholder="this number"/>
-        =
-        <input type="text" id="divOutput" readonly/>
-      </p>
-      <input type="button" onclick="division()" value="Calculate"/>
-      <input type="button" onclick="clearDiv()" value="Clear"/>
-      <span id=""></span>
-    </div>
-    <div>
-      <p>Exponents
-        <input type="text" id="expInputX" placeholder="this number"/>
-        to the power of
-        <input type="text" id="expInputY" placeholder="this number"/>
-        =
-        <input type="text" id="expOutput" readonly/>
-      </p>
-      <input type="button" onclick="exponent()" value="Calculate"/>
-      <input type="button" onclick="clearExp()" value="Clear"/>
-      <span id=""></span>
-    </div>
-  <hr>
-    <div>
-      <h3>A simple palindrome</h3>
-      <p>
-        <input type="text" id="palindromeInput" placeholder="This word"/>
-        reversed is
-        <input type="text" id="palindromeOutput" placeholder="this" readonly/>
-        <span id=palindromeChecker></span>
-      </p>
-      <input type="button" onclick="reverseString(), palindrome()" value="Go"/>
-      <input type="submit" onclick="clearPalindrome()" value="Clear"/>
-    </div>
-  <hr>
+    <br><br>
+</div>
 </body>
 </html>

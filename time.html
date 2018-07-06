@@ -1,52 +1,86 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Days Since</title>
+    <title>Time calc</title>
     <meta charset="utf-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts/time.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 </head>
 <body onload="ConvertDates('today')">
-<div>
-    <button onclick="location.href='index.html'" type="button">Home</button>
-    <button onclick="location.href='calculator.html'" type="button">Calculator</button>
-    <button onclick="location.href='time.html'" type="button">Time Difference</button>
-</div>
-<hr>
-<center><h3>Here you can calculate the difference between two dates</h3></center>
-</br>
-<div class="dateArea">
-    <p>The time difference between </br></p>
-    <input type="date" id="firstDate"></br>
-    <p>and</br></p>
-    <input type="date" id="secondDate"></br>
-    <p>is</br></p>
-</div>
-<center><input type="submit" id="dateCalc" value="Calculate" onclick="GetDates()"></center>
-</br>
-<center><p id="readableAnswer"></p></center>
-</br>
-<center><h3>Raw separate values</h3></center>
-<div class="calcWrapper">
-    <div class="row">
-        <div class="column columnLeft">
-            <p id="Years"></p>
-            <p id="Months"></p>
-            <p id="Days"></p>
-            <p id="Hours"></p>
-            <p id="Minutes"></p>
-            <p id="Seconds"></p>
-            <p id="Milliseconds"></p>
+<div id="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="index.html">Isaac's Site</a>
+            <a class="nav-link" href="calculator.html">Calculator</a>
+            <a class="nav-link" href="time.html">Time Difference</a>
         </div>
-        <div class="column columnRight">
-            <p>Years</p>
-            <p>Months</p>
-            <p>Days</p>
-            <p>Hours</p>
-            <p>Minutes</p>
-            <p>Seconds</p>
-            <p>Milliseconds</p>
+    </nav>
+    <div class="body-content">
+        <center><h3>Here you can calculate the difference between two dates</h3></center>
+        </br>
+        <div class="dateArea">
+            <p>The time difference between </br></p>
+            <input type="date" id="firstDate"></br>
+            <p>and</br></p>
+            <input type="date" id="secondDate"></br>
+            <p>is</br></p>
         </div>
+        <center><input type="submit" id="dateCalc" value="Calculate" onclick="GetDates()"></center>
+        </br>
+        <center><p id="readableAnswer"></p></center>
+        </br>
+        <center><h3>Independent values</h3></center>
+     <center>   <table>
+            <tr>
+                <th class="columnLeft">Values</th>
+                <th class="tableSpacer"></th>
+                <th>Intervals</th>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Years"></td>
+                <td class="tableSpacer"></td>
+                <td>Years</td>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Months"></td>
+                <td class="tableSpacer"></td>
+                <td>Months</td>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Days"></td>
+                <td class="tableSpacer"></td>
+                <td>Days</td>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Hours"></td>
+                <td class="tableSpacer"></td>
+                <td>Hours</td>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Minutes"></td>
+                <td class="tableSpacer"></td>
+                <td>Minutes</td>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Seconds"></td>
+                <td class="tableSpacer"></td>
+                <td>Seconds</td>
+            </tr>
+            </tr>
+            <tr>
+                <td class="columnLeft" id="Milliseconds"></td>
+                <td class="tableSpacer"></td>
+                <td>Milliseconds</td>
+            </tr>
+        </table></center>
+    </div>
+    <div class="footer">
+
     </div>
 </div>
 </body>
