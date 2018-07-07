@@ -16,12 +16,12 @@ let uniques = {};
 let words = sonnet.match(/\w+/g);
 
 for (let i = 0; i < words.length; i++) {
-  let word = words[i];    //assigns word a vlaue based on index i of words
-  if (uniques[word]) {    //if the key exists add 1 to value
-    uniques[word] += 1;
-  } else {                //if the key doesn't exit, create it and set value to 1
-    uniques[word] = 1;
-  }
+    let word = words[i];    //assigns word a vlaue based on index i of words
+    if (uniques[word]) {    //if the key exists add 1 to value
+        uniques[word] += 1;
+    } else {                //if the key doesn't exit, create it and set value to 1
+        uniques[word] = 1;
+    }
 }
 
 console.log(uniques);

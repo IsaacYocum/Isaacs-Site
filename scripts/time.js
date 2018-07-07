@@ -27,7 +27,7 @@ function GetDates() {
 
 //Inserts today's date into the second date input
 function ConvertDates(date) {
-    //Takes the onload arguement from time.html to assign the "today" to the secondDate field
+    //Takes the onload argument from time.html to assign the "today" to the secondDate field
     if (date === 'today') {
         let now = new Date();
         let dayNum = now.getDate();
@@ -35,17 +35,17 @@ function ConvertDates(date) {
         let year = now.getFullYear();
 
         if (dayNum < 10) {
-          dayNum = '0' + dayNum;
+            dayNum = '0' + dayNum;
         }
 
         if (month < 10) {
-          month = '0' + (month + 1);
+            month = '0' + (month + 1);
         }
 
         let today = year + '-' + month + '-' + dayNum;
         document.getElementById('secondDate').value = today;
         console.log(today);
-      //calculates and returns how many milliseconds are in a certain month
+        //calculates and returns how many milliseconds are in a certain month
     } else {
         //if (date.getMonth() === 1) {
         //    millisecondsInMonth = 1000 * 60 * 60 * 24 * 28;
@@ -104,7 +104,7 @@ function calcDifference(date1, date2) {
 }
 
 function monthMilliseconds() {
-    var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+    var months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
     for (var i = startMonth; i < endMonth; i++) {
         if (i === 12 && endMonth !== 12) {

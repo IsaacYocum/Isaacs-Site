@@ -13,101 +13,102 @@ var whichNum = false;
 
 //Gets the appropriate numbers from buttons pressed
 function GetNum(num) {
-  var numPlaceholder = num.toString();
-  if (whichNum === false) {
-    if (answer !== undefined) {
-      firstNum = numPlaceholder;
-      console.log('firstNum is ' + firstNum)
-      document.getElementById('calcOutput').value = firstNum;
-      answer = undefined;
+    var numPlaceholder = num.toString();
+    if (whichNum === false) {
+        if (answer !== undefined) {
+            firstNum = numPlaceholder;
+            console.log('firstNum is ' + firstNum);
+            document.getElementById('calcOutput').value = firstNum;
+            answer = undefined;
+        } else {
+            firstNum += numPlaceholder;
+            console.log('firstNum is ' + firstNum);
+            document.getElementById('calcOutput').value = firstNum;
+        }
     } else {
-      firstNum += numPlaceholder;
-      console.log('firstNum is ' + firstNum)
-      document.getElementById('calcOutput').value = firstNum;
+        secondNum += numPlaceholder;
+        console.log('secondNum is ' + secondNum);
+        document.getElementById('calcOutput').value = secondNum;
     }
-  } else {
-    secondNum += numPlaceholder;
-    console.log('secondNum is ' + secondNum)
-    document.getElementById('calcOutput').value = secondNum;
-  }
 }
 
 //Gets the mathematical operator and allows the second number to be entered
 function GetOperator(op) {
-  if (firstNum !== '') {
-    //If firstNum
-    if (whichNum === false) {
-      console.log(operator)
-      whichNum = true;
-      //If secondNum
-    } else {
-      Calculate();
-      whichNum = true;
+    if (firstNum !== '') {
+        //If firstNum
+        if (whichNum === false) {
+            console.log(operator);
+            whichNum = true;
+            //If secondNum
+        } else {
+            Calculate();
+            whichNum = true;
+        }
+        operator = op;
     }
-    operator = op;
-  }
 }
 
 //Concatenates a decimal
 function Decimal() {
-  if (!whichNum) {
-    if (!firstNum.includes('.')) {
-      firstNum += '.';
-      document.getElementById('calcOutput').value = firstNum;
+    if (!whichNum) {
+        if (!firstNum.includes('.')) {
+            firstNum += '.';
+            document.getElementById('calcOutput').value = firstNum;
+        }
     }
-  } if (!secondNum.includes('.')) {
-    secondNum += '.';
-    document.getElementById('calcOutput').value = secondNum;
-  }
+    if (!secondNum.includes('.')) {
+        secondNum += '.';
+        document.getElementById('calcOutput').value = secondNum;
+    }
 }
 
 //Makes the appropriate number negative
 function Negative() {
-  if (!whichNum) {
-    if (!firstNum.includes('-')) {
-      firstNum = '-' + firstNum;
-      document.getElementById('calcOutput').value = firstNum;
+    if (!whichNum) {
+        if (!firstNum.includes('-')) {
+            firstNum = '-' + firstNum;
+            document.getElementById('calcOutput').value = firstNum;
+        } else {
+            firstNum = firstNum.replace('-', '');
+            document.getElementById('calcOutput').value = firstNum;
+        }
     } else {
-      firstNum = firstNum.replace('-', '');
-      document.getElementById('calcOutput').value = firstNum;
+        if (!secondNum.includes('-')) {
+            secondNum = '-' + secondNum;
+            document.getElementById('calcOutput').value = secondNum;
+        } else {
+            secondNum = secondNum.replace('-', '');
+            document.getElementById('calcOutput').value = secondNum;
+        }
     }
-  } else {
-    if (!secondNum.includes('-')) {
-      secondNum = '-' + secondNum;
-      document.getElementById('calcOutput').value = secondNum;
-    } else {
-      secondNum = secondNum.replace('-', '');
-      document.getElementById('calcOutput').value = secondNum;
-    }
-  }
 }
 
 //Calculates result given two numbers and an operator
-//Uses implicite cohersion
+//Uses implicit coercion
 function Calculate() {
-  if (operator === '*') {
-    answer = firstNum * secondNum;
-  } else if (operator === '/') {
-    answer = firstNum / secondNum;
-  } else if (operator === '+') {
-    answer = +firstNum + +secondNum;
-  } else if (operator === '-') {
-    answer = firstNum - secondNum;
-  } else if (operator === '^') {
-    answer = Math.pow(firstNum, secondNum);
-  }
-  document.getElementById('calcOutput').value = answer;
-  console.log('firstNum ' + firstNum + ' ' + operator + ' secondNum ' + secondNum +  ' = answer ' + answer);
-  firstNum = answer;
-  secondNum = '';
-  whichNum = false;
+    if (operator === '*') {
+        answer = firstNum * secondNum;
+    } else if (operator === '/') {
+        answer = firstNum / secondNum;
+    } else if (operator === '+') {
+        answer = +firstNum + +secondNum;
+    } else if (operator === '-') {
+        answer = firstNum - secondNum;
+    } else if (operator === '^') {
+        answer = Math.pow(firstNum, secondNum);
+    }
+    document.getElementById('calcOutput').value = answer;
+    console.log('firstNum ' + firstNum + ' ' + operator + ' secondNum ' + secondNum + ' = answer ' + answer);
+    firstNum = answer;
+    secondNum = '';
+    whichNum = false;
 }
 
 //Resets the calculator and all variables to their default states
 function Clear() {
-  document.getElementById('calcOutput').value = '';
-  firstNum = '';
-  secondNum = '';
-  answer = undefined;
-  whichNum = false;
+    document.getElementById('calcOutput').value = '';
+    firstNum = '';
+    secondNum = '';
+    answer = undefined;
+    whichNum = false;
 }
