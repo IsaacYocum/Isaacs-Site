@@ -12,90 +12,89 @@
     <script src="scripts/calculator.js"></script>
 </head>
 <body onload="Clear()">
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="navbar-nav">
-        <a class="navbar-brand" href="index.html">Isaac's Site</a>
-        <a class="nav-link" href="calculator.html">Calculator</a>
-        <a class="nav-link" href="time.html">Time Difference</a>
-    </div>
-</nav>
-
 <div id="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="navbar-nav">
+            <a class="navbar-brand" href="index.html">Isaac's Site</a>
+            <a class="nav-link" href="calculator.html">Calculator</a>
+            <a class="nav-link" href="time.html">Time Difference</a>
+        </div>
+    </nav>
+
     <div class="body-content">
-        </br>
+        <br>
         <center><p>I thought it would be cool to make a calculator from scratch - so I did!</p></center>
         <center><p>Check the console (f12) for step by step progress</p></center>
         <center><p>This is a work in progress</p></center>
-        </br>
+        <br>
         <div class="calcWrapper">
             <div class="calculator">
-                </br>
-                <div class="row">
-                    <div class="row">
-                        <input type="text" id="calcOutput" placeholder="0" readonly>
-                    </div>
-                    </br>
-                    <div class="column columnLeft">
-                        <div class="row">
+                <br>
+                <table>
+                    <tr class="spaceUnder">
+                        <td><input type="text" id="calcOutput" placeholder="0" readonly></td>
+                    </tr>
+
+                    <tr align="right">
+                        <td>
                             <input type="button" class="calcButton" value="(-)" onclick="Negative()">
                             <input type="button" class="calcButton" value="^" onclick="GetOperator('^')">
-                        </div>
-                        <div class="row">
+                            <input type="button" class="calcButton" value="Clr" onclick="Clear()">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <input type="button" class="calcButton" value="7" onclick="GetNum(7)">
                             <input type="button" class="calcButton" value="8" onclick="GetNum(8)">
                             <input type="button" class="calcButton" value="9" onclick="GetNum(9)">
-                        </div>
-                        <div class="row">
+                            <input type="button" class="calcButton" value="&times" onclick="GetOperator('*')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <input type="button" class="calcButton" value="4" onclick="GetNum(4)">
                             <input type="button" class="calcButton" value="5" onclick="GetNum(5)">
                             <input type="button" class="calcButton" value="6" onclick="GetNum(6)">
-                        </div>
-                        <div class="row">
+                            <input type="button" class="calcButton" value="&divide" onclick="GetOperator('/')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <input type="button" class="calcButton" value="1" onclick="GetNum(1)">
                             <input type="button" class="calcButton" value="2" onclick="GetNum(2)">
                             <input type="button" class="calcButton" value="3" onclick="GetNum(3)">
-                        </div>
-                        <div class="row">
+                            <input type="button" class="calcButton" value="+" onclick="GetOperator('+')">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
                             <input type="button" class="calcButton" value="." onclick="Decimal()">
                             <input type="button" class="calcButton" value="0" onclick="GetNum('0')">
                             <input type="button" class="calcButton" value="=" onclick="Calculate()">
-                        </div>
-                    </div>
-                    <div class="column columnRight">
-                        <div class="row">
-                            <input type="button" class="calcButton" value="Clr" onclick="Clear()">
-                        </div>
-                        <div class="row">
-                            <input type="button" class="calcButton" value="&times" onclick="GetOperator('*')">
-                        </div>
-                        <div class="row">
-                            <input type="button" class="calcButton" value="&divide" onclick="GetOperator('/')">
-                        </div>
-                        <div class="row">
-                            <input type="button" class="calcButton" value="+" onclick="GetOperator('+')">
-                        </div>
-                        <div class="row">
                             <input type="button" class="calcButton" value="-" onclick="GetOperator('-')">
-                        </div>
-                    </div>
-                    </br></br>
-                </div>
+                        </td>
+                    </tr>
+                </table>
+                <br>
             </div>
         </div>
-        <hr>
-        <h3>To do...</h3>
-        <ol>
-            <li>Implement exponents</li>
-            <li>Implement parentheses</li>
-            <li>Fix zero divided by zero error</li>
-            <li>Implement negative sign</li>
-        </ol>
-        </br>
+        <div>
+            <br><br>
+            <hr>
+            <h3>To do...</h3>
+            <ol>
+                <li>Implement exponents</li>
+                <li>Implement parentheses</li>
+                <li>Fix zero divided by zero error</li>
+                <li>Implement negative sign</li>
+            </ol>
+        </div>
     </div>
 
-    <div id="footer">
+    <div class="footer">
 
     </div>
+    <br><br>
 </div>
 </body>
 </html>

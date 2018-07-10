@@ -24,7 +24,6 @@ body {
 
 #calcOutput {
     height: 30px;
-    width: 203px;
     border-style: solid;
     text-align: right;
     padding-right: 5px;
@@ -40,10 +39,12 @@ input {
 
 .columnLeft {
     text-align: right;
+    margin-left: auto;
 }
 
 .columnRight {
     text-align: left;
+    margin-right: auto;
 }
 
 .calcWrapper {
@@ -51,10 +52,19 @@ input {
 }
 
 .calculator {
-    width: 250px;
+    width: 300px;
     margin: 0 auto;
     border-style: solid;
     background-color: #dddddd;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr.spaceUnder>td {
+    padding-bottom: 1em;
 }
 
 .row:after {
@@ -90,4 +100,9 @@ input {
 
 .tableSpacer {
     width: 50px;
+}
+
+calcWrapper {
+    margin-right: auto;
+    margin-left: auto;
 }
